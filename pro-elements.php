@@ -4,12 +4,12 @@
  * Description: Adds professional features for sites using the Elementor page builder.
  * Plugin URI: https://proelements.org/
  * Author: PROElements.org
- * Version: 3.35.0
+ * Version: 4.0.0
  * Author URI: https://proelements.org/
  * Requires PHP: 7.4
  * Requires at least: 6.7
  * Requires Plugins: elementor
- * Elementor tested up to: 3.35.0
+ * Elementor tested up to: 4.0.0
  * Text Domain: pro-elements
  */
 
@@ -28,7 +28,7 @@ function pro_elements_plugin_load_plugin() {
 		return;
 	}
 
-	define( 'ELEMENTOR_PRO_VERSION', '3.35.0' );
+	define( 'ELEMENTOR_PRO_VERSION', '4.0.0' );
 
 /**
  * All versions should be `major.minor`, without patch, in order to compare them properly.
@@ -37,7 +37,7 @@ function pro_elements_plugin_load_plugin() {
  * requiring 3.14.2 is not allowed)
  */
 define( 'ELEMENTOR_PRO_REQUIRED_CORE_VERSION', '3.32' );
-define( 'ELEMENTOR_PRO_RECOMMENDED_CORE_VERSION', '3.35' );
+define( 'ELEMENTOR_PRO_RECOMMENDED_CORE_VERSION', '4.0' );
 
 define( 'ELEMENTOR_PRO__FILE__', __FILE__ );
 define( 'ELEMENTOR_PRO_PLUGIN_BASE', plugin_basename( ELEMENTOR_PRO__FILE__ ) );
@@ -120,7 +120,7 @@ function pro_elements_plugin_fail_load() {
 		$activation_url = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s', 'activate-plugin_' . $plugin );
 
 		$message = '<h3>' . esc_html__( 'You\'re not using PRO Elements yet!', 'elementor-pro' ) . '</h3>';
-		$message .= '<p>' . esc_html__( 'Activate the Elementor plugin to start using all of PRO Elements plugin’s features.', 'elementor-pro' ) . '</p>';
+		$message .= '<p>' . esc_html__( 'Activate the Elementor plugin to start using all of PRO Elements plugin\'s features.', 'elementor-pro' ) . '</p>';
 		$message .= '<p>' . sprintf( '<a href="%s" class="button-primary">%s</a>', $activation_url, esc_html__( 'Activate Now', 'elementor-pro' ) ) . '</p>';
 	} else {
 		if ( ! current_user_can( 'install_plugins' ) ) {
@@ -166,7 +166,7 @@ function pro_elements_admin_notice_upgrade_recommendation() {
 	$upgrade_link = wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $file_path, 'upgrade-plugin_' . $file_path );
 	$message = sprintf(
 	/* translators: 1: Title opening tag, 2: Title closing tag */
-		esc_html__( '%1$sDon’t miss out on the new version of Elementor%2$s Update to the latest version of Elementor to enjoy new features, better performance and compatibility.', 'elementor-pro' ),
+		esc_html__( '%1$sDon't miss out on the new version of Elementor%2$s Update to the latest version of Elementor to enjoy new features, better performance and compatibility.', 'elementor-pro' ),
 		'<h3>',
 		'</h3>'
 	);
